@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Matheus Roque",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 262.34,
+      "left": 125.03,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell1",
+      "top": 175.4,
+      "left": 290.6,
+      "attrs": { "type": "50kg" }
+    },
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp1",
+      "top": -4.9,
+      "left": -5,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["oled1:GND", "esp1:GND.1", "black", ["v-124.8", "h-38.4"]],
+    ["oled1:VCC", "esp1:3V3", "magenta", ["v-115.2", "h0.15"]],
+    ["oled1:SCL", "esp1:D22", "white", ["v-240", "h-28.5"]],
+    ["oled1:SDA", "esp1:D21", "yellow", ["v0"]],
+    ["cell1:GND", "esp1:GND.1", "black", ["h-67.2", "v-57.8"]],
+    ["cell1:VCC", "esp1:3V3", "red", ["h-96", "v-76.8"]],
+    ["cell1:SCK", "esp1:D5", "blue", ["h-86.4", "v-135.2"]],
+    ["cell1:DT", "esp1:D4", "green", ["h-76.8", "v-0.5"]]
+  ],
+  "dependencies": {}
+}
